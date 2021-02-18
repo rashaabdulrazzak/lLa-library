@@ -207,7 +207,6 @@ exports.book_delete_post = function (req, res) {
 };
 
 // Display book update form on GET.
-// Display book update form on GET.
 exports.book_update_get = function (req, res, next) {
   // res.send('NOT IMPLEMENTED: Book update GET');
   async.parallel(
