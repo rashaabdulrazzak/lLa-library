@@ -7,6 +7,8 @@ var config = require("dotenv").config();
 var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/users");
 var catalogRouter = require("./routes/catalog");
+var compression = require("compression");
+var helmet = require("helmet");
 
 var app = express();
 
@@ -22,6 +24,8 @@ db.on("error", console.error.bind(console, "MongoDB connection error:"));
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "jade");
 
+app.use(helmet());
+app.use(compression()); //Compress all routes
 app.use(logger("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
