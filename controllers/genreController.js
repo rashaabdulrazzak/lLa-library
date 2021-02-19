@@ -137,10 +137,10 @@ exports.genre_delete_post = function (req, res, next) {
   async.parallel(
     {
       genre: function (callback) {
-        Genre.findById(req.body.id).exec(callback);
+        Genre.findById(req.params.id).exec(callback);
       },
       genre_books: function (callback) {
-        Book.find({ genre: req.body.id }).exec(callback);
+        Book.find({ genre: req.params.id }).exec(callback);
       },
     },
     function (err, results) {
@@ -156,7 +156,7 @@ exports.genre_delete_post = function (req, res, next) {
         });
         return;
       } else {
-        Genre.findByIdAndRemove(req.body.generid, function deleteGenre(err) {
+        Genre.findByIdAndRemove(req.body.genreid, function deleteGenre(err) {
           if (err) {
             return next(err);
           }
