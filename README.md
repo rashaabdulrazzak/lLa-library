@@ -5,7 +5,7 @@ This is a basic local library website that shows examples of different available
 It is built by following the [tutorial example](https://developer.mozilla.org/en-US/docs/Learn/Server-side/Express_Nodejs/Introduction) on the Mozilla Developer Network
 
 ## Screenshot of the final result
-<img src='output.png' width='300' height='300'>
+<img src='result.png' width='300' height='300'>
 ## Technologies Used
 
 1. [Express Application Generator](https://expressjs.com/) tool to create a skeleton website and application
