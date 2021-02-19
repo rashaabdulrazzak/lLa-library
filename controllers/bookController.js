@@ -27,7 +27,7 @@ exports.index = function (req, res) {
     },
     function (err, results) {
       res.render("index", {
-        title: "ILA library",
+        title: "Ayla Library",
         error: err,
         data: results,
       });
