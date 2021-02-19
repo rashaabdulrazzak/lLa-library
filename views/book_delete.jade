@@ -1,0 +1,23 @@
+extends layout
+
+block content
+
+  h1 book: #{book.title}  
+
+  div(style='margin-left:20px;margin-top:20px')
+    h4 Copies 
+
+    dl
+      each insta in book_instances
+        h3 Sorry But you have to delete the following copies before:
+        dt
+          a(href=insta.url) #{insta.imprint}
+        dd #{insta.status}
+
+      else
+        p Do You Really Want to Delete This Book??
+        p 
+          form(method='POST' action='')
+            div.form-group
+                input#bookid.form-control(type="hidden", name="bookid", required='true' ,value=book._id)
+                button.btn.btn-primary(type='submit') Delete
